@@ -1,0 +1,6 @@
+C:\Users\theem\source\repos\TarefasDNF\Dominios.ClassLibrary\bin\Debug\Dominios.ClassLibrary.dll
+C:\Users\theem\source\repos\TarefasDNF\Dominios.ClassLibrary\bin\Debug\Dominios.ClassLibrary.pdb
+C:\Users\theem\source\repos\TarefasDNF\Dominios.ClassLibrary\obj\Debug\Dominios.ClassLibrary.csproj.AssemblyReference.cache
+C:\Users\theem\source\repos\TarefasDNF\Dominios.ClassLibrary\obj\Debug\Dominios.ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\theem\source\repos\TarefasDNF\Dominios.ClassLibrary\obj\Debug\Dominios.ClassLibrary.dll
+C:\Users\theem\source\repos\TarefasDNF\Dominios.ClassLibrary\obj\Debug\Dominios.ClassLibrary.pdb

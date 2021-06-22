@@ -1,0 +1,6 @@
+C:\Users\theem\source\repos\TarefasDNF\BancoDeDados.ProjetoDB\bin\Debug\BancoDeDados.ProjetoDB.dacpac
+C:\Users\theem\source\repos\TarefasDNF\BancoDeDados.ProjetoDB\bin\Debug\BancoDeDados.ProjetoDB.dll
+C:\Users\theem\source\repos\TarefasDNF\BancoDeDados.ProjetoDB\bin\Debug\BancoDeDados.ProjetoDB.pdb
+C:\Users\theem\source\repos\TarefasDNF\BancoDeDados.ProjetoDB\obj\Debug\BancoDeDados.ProjetoDB.sqlproj.AssemblyReference.cache
+C:\Users\theem\source\repos\TarefasDNF\BancoDeDados.ProjetoDB\obj\Debug\BancoDeDados.ProjetoDB.dll
+C:\Users\theem\source\repos\TarefasDNF\BancoDeDados.ProjetoDB\obj\Debug\BancoDeDados.ProjetoDB.pdb
