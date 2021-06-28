@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dominios.ClassLibrary\Dominios.ClassLibrary.csproj">
+    <ProjectReference Include="..\Dominios.ClassLibrary\Dominios.Domination.csproj">
       <Project>{267b5e0b-c4d4-447e-b701-6a9bcadf1ee9}</Project>
-      <Name>Dominios.ClassLibrary</Name>
+      <Name>Dominios.Domination</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

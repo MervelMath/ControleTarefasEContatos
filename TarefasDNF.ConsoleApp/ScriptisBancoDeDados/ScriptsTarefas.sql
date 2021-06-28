@@ -15,7 +15,7 @@ values
 		'2021/06/05',
 		'2021/06/08',
 		'100%',
-		'2'
+		6
 		)
 
 select SCOPE_IDENTITY();
@@ -34,7 +34,7 @@ update TBTarefas
 
 delete from TBTarefas
 		where
-			[id] = 8
+			[id] = 31
 
 
 select 
@@ -48,3 +48,5 @@ select
 		TBTarefas
 	order by
 		[Prioridade] DESC
+
+DBCC CHECKIDENT('TB', RESEED, 0)

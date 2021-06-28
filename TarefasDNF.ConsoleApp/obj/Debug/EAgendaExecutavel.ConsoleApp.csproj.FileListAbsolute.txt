@@ -1,0 +1,14 @@
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\TarefasDNF.ConsoleApp.exe.config
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\TarefasDNF.ConsoleApp.exe
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\TarefasDNF.ConsoleApp.pdb
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\Telas.ClassLibrary.dll
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\Dominios.ClassLibrary.dll
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\Controladores.ClassLibrary.dll
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\Telas.ClassLibrary.pdb
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\Dominios.ClassLibrary.pdb
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\bin\Debug\Controladores.ClassLibrary.pdb
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\obj\Debug\EAgendaExecutavel.ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\obj\Debug\EAgendaExecutavel.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\obj\Debug\EAgendaExecutavel.ConsoleApp.csproj.CopyComplete
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\obj\Debug\TarefasDNF.ConsoleApp.exe
+C:\Users\theem\source\repos\TarefasDNF\TarefasDNF.ConsoleApp\obj\Debug\TarefasDNF.ConsoleApp.pdb

@@ -32,7 +32,7 @@ update TBCartoes
 
 delete from TBCartoes
 		where
-			[id] = 8
+			[id] = 19
 
 
 select 
@@ -46,4 +46,6 @@ select
 		TBCartoes
 	order by
 		[cargo]
+
+DBCC CHECKIDENT('TBCARTOES', RESEED, 0)
 	

@@ -72,7 +72,7 @@ namespace Controladores.ClassLibrary
 
             string sqlSelecao =
                 @"
-                    SELECT 
+                SELECT 
 	            	[ID],
 	            	[NOME],
 	            	[EMAIL], 
@@ -202,6 +202,7 @@ namespace Controladores.ClassLibrary
                 @"select SCOPE_IDENTITY()";
 
             comandoInsercao.CommandText = sqlInsercao;
+
             comandoInsercao.Parameters.AddWithValue("NOME", obj.nome);
             comandoInsercao.Parameters.AddWithValue("EMAIL", obj.email);
             comandoInsercao.Parameters.AddWithValue("TELEFONE", obj.telefone);

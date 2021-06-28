@@ -155,6 +155,7 @@ namespace Controladores.ClassLibrary
                 @"select SCOPE_IDENTITY()";
 
             comandoInsercao.CommandText = sqlInsercao;
+
             comandoInsercao.Parameters.AddWithValue("TITULO", obj.titulo);
             comandoInsercao.Parameters.AddWithValue("DATACRIACAO", obj.dataCriacao);
             comandoInsercao.Parameters.AddWithValue("DATACONCLUSAO", obj.dataConclusao);
