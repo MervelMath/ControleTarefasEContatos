@@ -16,7 +16,8 @@ namespace Dominios.ClassLibrary
         public int idContato;
         public string nomeContato;
 
-        public Compromisso(string assunto, string local, DateTime dataCompromisso, DateTime dataTerminoCompromisso, string linkReuniao, int idContato)
+        public Compromisso(string assunto, string local, DateTime dataCompromisso,
+            DateTime dataTerminoCompromisso, string linkReuniao, int idContato)
         {
             this.assunto = assunto;
             this.local = local;
@@ -34,6 +35,9 @@ namespace Dominios.ClassLibrary
 
         public override string Validar()
         {
+            if (linkReuniao.Substring(linkReuniao.Length - 4) != ".com")
+                return ("O link não contém o finalizador '.com'!");
+
             int comparacaoDeDatasHoje = DateTime.Compare(dataInicioCompromisso, DateTime.Now);
 
             if (comparacaoDeDatasHoje < 0)

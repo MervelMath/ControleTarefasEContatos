@@ -9,3 +9,14 @@ C:\Users\theem\source\repos\TarefasDNF\Telas.ClassLibrary\obj\Debug\Telas.Screen
 C:\Users\theem\source\repos\TarefasDNF\Telas.ClassLibrary\obj\Debug\Telas.Screen.csproj.CopyComplete
 C:\Users\theem\source\repos\TarefasDNF\Telas.ClassLibrary\obj\Debug\Telas.ClassLibrary.dll
 C:\Users\theem\source\repos\TarefasDNF\Telas.ClassLibrary\obj\Debug\Telas.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\bin\Debug\Telas.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\bin\Debug\Telas.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\bin\Debug\Controladores.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\bin\Debug\Dominios.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\bin\Debug\Controladores.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\bin\Debug\Dominios.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\obj\Debug\Telas.Screen.csproj.AssemblyReference.cache
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\obj\Debug\Telas.Screen.csproj.CoreCompileInputs.cache
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\obj\Debug\Telas.Screen.csproj.CopyComplete
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\obj\Debug\Telas.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\Telas.ClassLibrary\obj\Debug\Telas.ClassLibrary.pdb

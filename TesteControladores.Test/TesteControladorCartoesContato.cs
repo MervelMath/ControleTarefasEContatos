@@ -39,7 +39,7 @@ namespace TesteControladores.Test
         public void TesteInsercaoCartao()
         {
             int tamanhoInicial = controladorCartoesContatos.SelecionarTodosRegistros().Count;
-            CartoesDeContatos cartao = new CartoesDeContatos("Alo", "matheus@gmail.com",
+            CartoesDeContatos cartao = new CartoesDeContatos("Alooooohh", "matheus@gmail.com",
                 31820, "empr", "func");
             controladorCartoesContatos.Inserir(cartao);
             Assert.AreNotEqual(tamanhoInicial, controladorCartoesContatos.SelecionarTodosRegistros().Count);

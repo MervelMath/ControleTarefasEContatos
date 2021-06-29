@@ -7,3 +7,12 @@ C:\Users\theem\source\repos\TarefasDNF\Controladores.ClassLibrary\obj\Debug\Cont
 C:\Users\theem\source\repos\TarefasDNF\Controladores.ClassLibrary\obj\Debug\Controladores.Controller.csproj.CopyComplete
 C:\Users\theem\source\repos\TarefasDNF\Controladores.ClassLibrary\obj\Debug\Controladores.ClassLibrary.dll
 C:\Users\theem\source\repos\TarefasDNF\Controladores.ClassLibrary\obj\Debug\Controladores.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\bin\Debug\Controladores.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\bin\Debug\Controladores.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\bin\Debug\Dominios.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\bin\Debug\Dominios.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\obj\Debug\Controladores.Controller.csproj.AssemblyReference.cache
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\obj\Debug\Controladores.Controller.csproj.CoreCompileInputs.cache
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\obj\Debug\Controladores.Controller.csproj.CopyComplete
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\obj\Debug\Controladores.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\Controladores.ClassLibrary\obj\Debug\Controladores.ClassLibrary.pdb

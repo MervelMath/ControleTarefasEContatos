@@ -23,6 +23,11 @@ namespace Telas.ClassLibrary
             MontarCabecalhoTabela(configuracaoColunasTabela, "Id", "Assunto", "Local",
                 "Data Início", "Data Término", "Link da Reunião", "Nome");
 
+            compromissos = OrganizarEExibirCompromissos(compromissos, configuracaoColunasTabela);
+        }
+
+        private static List<Compromisso> OrganizarEExibirCompromissos(List<Compromisso> compromissos, string configuracaoColunasTabela)
+        {
             compromissos = compromissos.OrderByDescending(x => x.DataInicio).ThenByDescending(x => x.DataInicio.TimeOfDay).ToList();
 
             Console.WriteLine("");
@@ -32,7 +37,7 @@ namespace Telas.ClassLibrary
 
             foreach (Compromisso compromisso in compromissos)
             {
-                if (DateTime.Compare(compromisso.DataInicio, DateTime.Now) >= 0)
+                if (DataDeInicioEhMaiorQueADataAtual(compromisso))
                     Console.WriteLine(configuracaoColunasTabela, compromisso.id, compromisso.Assunto, compromisso.Local,
                         compromisso.DataInicio, compromisso.DataTerminoCompromisso, compromisso.LinkReuniao, compromisso.nomeContato);
             }
@@ -44,10 +49,12 @@ namespace Telas.ClassLibrary
 
             foreach (Compromisso compromisso in compromissos)
             {
-                if (DateTime.Compare(compromisso.DataInicio, DateTime.Now) < 0)
+                if (DataJaPassou(compromisso))
                     Console.WriteLine(configuracaoColunasTabela, compromisso.id, compromisso.Assunto, compromisso.Local,
                     compromisso.DataInicio, compromisso.DataTerminoCompromisso, compromisso.LinkReuniao, compromisso.nomeContato);
             }
+
+            return compromissos;
         }
 
         public override Compromisso ObterRegistro()
@@ -76,6 +83,15 @@ namespace Telas.ClassLibrary
             Compromisso compromisso = new Compromisso(assunto, local, dataInicio, dataFim, linkReuniao, idContato);
 
             return compromisso;
+        }
+        private static bool DataJaPassou(Compromisso compromisso)
+        {
+            return DateTime.Compare(compromisso.DataInicio, DateTime.Now) < 0;
+        }
+
+        private static bool DataDeInicioEhMaiorQueADataAtual(Compromisso compromisso)
+        {
+            return DateTime.Compare(compromisso.DataInicio, DateTime.Now) >= 0;
         }
 
         private int VerificarEInserirIDCOntato(List<int> listaIds)

@@ -49,4 +49,4 @@ select
 	order by
 		[Prioridade] DESC
 
-DBCC CHECKIDENT('TB', RESEED, 0)
+DBCC CHECKIDENT('TBTAREFAS', RESEED, 0)

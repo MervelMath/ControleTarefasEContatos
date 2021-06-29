@@ -39,7 +39,7 @@ namespace Telas.ClassLibrary
             Console.Write("Digite o telefone do contato: ");
             string testeTelefone = (Console.ReadLine());
 
-            int telefone =0;
+            int telefone = 0;
 
             if(!Int32.TryParse(testeTelefone, out telefone))
             {

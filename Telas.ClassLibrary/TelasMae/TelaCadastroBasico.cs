@@ -15,7 +15,6 @@ namespace Telas.ClassLibrary.TelasMae
             this.tituloDaTela = tipoTela;
             controladorRegistro = controlador;
         }
-
         public void EditarRegistro()
         {
             ConfigurarTela($"Editando {tituloDaTela}...");
@@ -52,7 +51,6 @@ namespace Telas.ClassLibrary.TelasMae
             }
         }
 
-
         public void ExcluirRegistro()
         {
             ConfigurarTela($"Excluindo um(a) {tituloDaTela}...");
@@ -83,6 +81,7 @@ namespace Telas.ClassLibrary.TelasMae
                 ExcluirRegistro();
             }
         }
+
         public void InserirNovoRegistro()
         {
             ConfigurarTela($"Inserindo um(a) novo(a) {tituloDaTela}...");

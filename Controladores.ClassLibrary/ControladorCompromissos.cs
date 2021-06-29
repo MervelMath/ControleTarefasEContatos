@@ -231,7 +231,9 @@ namespace Controladores.ClassLibrary
                 comando.Parameters.AddWithValue("IDCONTATO", obj.idContato);
         }
 
-        private static void SelecionarCompromisso(SqlDataReader leitorCompromissos, out int id, out string assunto, out string local, out DateTime dataInicio, out DateTime dataFim, out string linkReuniao, out int idContato, out string nomeContato)
+        private static void SelecionarCompromisso(SqlDataReader leitorCompromissos, out int id, out string assunto,
+            out string local, out DateTime dataInicio, out DateTime dataFim,
+            out string linkReuniao, out int idContato, out string nomeContato)
         {
             id = Convert.ToInt32(leitorCompromissos["ID"]);
             assunto = (leitorCompromissos["ASSUNTO"]).ToString();
