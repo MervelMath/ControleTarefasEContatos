@@ -24,7 +24,8 @@ namespace Dominios.ClassLibrary
                 this.percentual = percentual;
             }
 
-            public override string Validar()
+
+        public override string Validar()
             {
                 int comparacaoDeDatas = DateTime.Compare(dataCriacao, dataConclusao);
 
@@ -36,6 +37,30 @@ namespace Dominios.ClassLibrary
 
                 return "VALIDA";
             }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Tarefa tarefa &&
+                   id == tarefa.id &&
+                   prioridade == tarefa.prioridade &&
+                   titulo == tarefa.titulo &&
+                   dataCriacao == tarefa.dataCriacao &&
+                   dataConclusao == tarefa.dataConclusao &&
+                   percentual == tarefa.percentual;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -1525883055;
+            hashCode = hashCode * -1521134295 + id.GetHashCode();
+            hashCode = hashCode * -1521134295 + prioridade.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(titulo);
+            hashCode = hashCode * -1521134295 + dataCriacao.GetHashCode();
+            hashCode = hashCode * -1521134295 + dataConclusao.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(percentual);
+            return hashCode;
+        }
+
         }
     }
 

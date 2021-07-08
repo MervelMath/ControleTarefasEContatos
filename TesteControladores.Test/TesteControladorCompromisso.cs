@@ -1,5 +1,6 @@
 ﻿using Controladores.ClassLibrary;
 using Dominios.ClassLibrary;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -7,54 +8,122 @@ using System.Text;
 
 namespace TesteControladores.Test
 {
-    /// <summary>
-    /// Testes de CRUD para o banco de dados de Compromissos.
-    /// </summary>
     [TestClass]
     public class TesteControladorCompromisso
     {
-            ControladorCompromissos controladorCompromisso = new ControladorCompromissos();
+        ControladorCompromissos controlador;
+        ResetDB dB;
+        public TesteControladorCompromisso()
+        {
+            controlador = new ControladorCompromissos();
+            dB = new ResetDB();
+            dB.DeleteSQLI(@"DELETE FROM [TBCARTOES];");
+            dB.DeleteSQLS(@"DELETE FROM [TBCARTOES];");
+            dB.DeleteSQLI(@"DELETE FROM [TBTAREFAS];");
+            dB.DeleteSQLS(@"DELETE FROM [TBTAREFAS];");
+            dB.DeleteSQLI(@"DELETE FROM [TBCOMPROMISSOS];");
+            dB.DeleteSQLS(@"DELETE FROM [TBCOMPROMISSOS];");
+        }
 
-            [TestMethod]
-            public void TesteSelecaoTodosOsCompromissos()
-            {
-                Assert.AreNotEqual(controladorCompromisso.SelecionarTodosRegistros(), null);
-            }
+        [TestMethod]
+        public void DeveInserir_CompromissoSem_Contato()
+        {
+            //arrange
+            Compromisso compromisso = new Compromisso("Negócios", "Bangu", new DateTime(2021,10,10), new DateTime(2022, 10, 10), "www.teste.com", 0);
+            compromisso.nomeContato = "";
+            //action
+            controlador.Inserir(compromisso);
 
-            [TestMethod]
-            public void TesteSelecaoCompromissosPorId()
-            {
-                Assert.AreNotEqual(controladorCompromisso.SelecionarRegistroPorId(10), null);
-            }
+            //assert
+            Compromisso compromissoEncontrado = controlador.SelecionarRegistroPorId(compromisso.id);
+            compromissoEncontrado.Should().Be(compromisso);
+        }
 
-            [TestMethod]
-            public void TesteEdicaoCompromisso()
-            {
-                Compromisso compromisso = controladorCompromisso.SelecionarRegistroPorId(5);
-                string testeAssunto = compromisso.Assunto;
-                compromisso.Assunto = "Teeeste";
-                controladorCompromisso.Editar(compromisso);
-                Assert.AreNotEqual(testeAssunto, compromisso.Assunto);
-            }
+        [TestMethod]
+        public void DeveInserir_CompromissoCom_Contato()
+        {
+            ControladorCartoesContatos controladorCartoesContatos = new ControladorCartoesContatos();
+            CartoesDeContatos contato = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Estagiário");
+            controladorCartoesContatos.Inserir(contato);
+            //arrange
+            Compromisso compromisso = new Compromisso("Negócios", "Bangu", new DateTime(2021, 10, 10), new DateTime(2022, 10, 10), "www.teste.com", contato.id);
 
-            [TestMethod]
-            public void TesteInsercaoCompromisso()
-            {
-                int tamanhoInicial = controladorCompromisso.SelecionarTodosRegistros().Count;
-                Compromisso compromisso = new Compromisso("Alo", "qualquer",
-                    new DateTime(2022,09,09), new DateTime(2022, 09, 10), "sauas.com", 0);
-                controladorCompromisso.Inserir(compromisso);
-                Assert.AreNotEqual(tamanhoInicial, controladorCompromisso.SelecionarTodosRegistros().Count);
-            }
+            //action
+            controlador.Inserir(compromisso);
 
-            [TestMethod]
-            public void TesteRemocaoCompromisso()
-            {
-                controladorCompromisso.Excluir(3);
+            //assert
+            Compromisso compromissoEncontrado = controlador.SelecionarRegistroPorId(compromisso.id);
+            compromissoEncontrado.idContato.Should().Be(contato.id);
+        }
 
-                Assert.AreEqual(controladorCompromisso.SelecionarRegistroPorId(3), null);
-            }
-        
+        [TestMethod]
+        public void DeveEditar_UmCompromisso()
+        {
+            //arrange
+            Compromisso compromisso = new Compromisso("Negócios", "Bangu", new DateTime(2021, 10, 10), new DateTime(2022, 10, 10), "www.teste.com", 0);
+            compromisso.nomeContato = "";
+            controlador.Inserir(compromisso);
 
+            string assuntoAux = compromisso.Assunto;
+
+            compromisso.Assunto = "Estratégias";
+
+            //action
+            controlador.Editar(compromisso);
+
+            //assert
+            Compromisso compromissoEncontrado = controlador.SelecionarRegistroPorId(compromisso.id);
+            assuntoAux.Should().NotBe(compromissoEncontrado.Assunto);
+        }
+
+        [TestMethod]
+        public void DeveExcluir_UmCompromisso()
+        {
+            //arrange            
+            Compromisso compromisso = new Compromisso("Negócios", "Bangu", new DateTime(2021, 10, 10), new DateTime(2022, 10, 10), "www.teste.com", 0);
+            compromisso.nomeContato = "";
+            controlador.Inserir(compromisso);
+
+
+            //action            
+            controlador.Excluir(compromisso.id);
+
+            //assert
+            Compromisso compromissoEncontrado = controlador.SelecionarRegistroPorId(compromisso.id);
+            compromissoEncontrado.Should().BeNull();
+        }
+
+        [TestMethod]
+        public void DeveSelecionar_Compromisso_PorId()
+        {
+            //arrange
+            Compromisso compromisso = new Compromisso("Negócios", "Bangu", new DateTime(2021, 10, 10), new DateTime(2022, 10, 10), "www.teste.com", 0);
+            compromisso.nomeContato = "";
+            controlador.Inserir(compromisso);
+
+            //action
+            Compromisso compromissoEncontrado = controlador.SelecionarRegistroPorId(compromisso.id);
+
+            //assert
+            compromissoEncontrado.Should().Be(compromisso);
+        }
+
+        [TestMethod]
+        public void DeveRemover_Compromisso_ComContatoExcluido()
+        {
+            ControladorCartoesContatos controladorCartoesContatos = new ControladorCartoesContatos();
+            CartoesDeContatos contato = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Estagiário");
+            controladorCartoesContatos.Inserir(contato);
+            //arrange
+            Compromisso compromisso = new Compromisso("Negócios", "Bangu", new DateTime(2021, 10, 10), new DateTime(2022, 10, 10), "www.teste.com", contato.id);
+
+            //action
+            controlador.Inserir(compromisso);
+            controladorCartoesContatos.Excluir(contato.id);
+
+            //assert
+            Compromisso compromissoEncontrado = controlador.SelecionarRegistroPorId(compromisso.id);
+            compromissoEncontrado.Should().BeNull();
+        }
     }
 }

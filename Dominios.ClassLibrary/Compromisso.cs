@@ -50,5 +50,42 @@ namespace Dominios.ClassLibrary
 
             return "VALIDA";
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Compromisso compromisso &&
+                   id == compromisso.id &&
+                   assunto == compromisso.assunto &&
+                   local == compromisso.local &&
+                   dataInicioCompromisso == compromisso.dataInicioCompromisso &&
+                   dataTerminoCompromisso == compromisso.dataTerminoCompromisso &&
+                   linkReuniao == compromisso.linkReuniao &&
+                   idContato == compromisso.idContato &&
+                   nomeContato == compromisso.nomeContato &&
+                   Assunto == compromisso.Assunto &&
+                   Local == compromisso.Local &&
+                   DataInicio == compromisso.DataInicio &&
+                   LinkReuniao == compromisso.LinkReuniao &&
+                   DataTerminoCompromisso == compromisso.DataTerminoCompromisso;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -1182057499;
+            hashCode = hashCode * -1521134295 + id.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(assunto);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(local);
+            hashCode = hashCode * -1521134295 + dataInicioCompromisso.GetHashCode();
+            hashCode = hashCode * -1521134295 + dataTerminoCompromisso.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(linkReuniao);
+            hashCode = hashCode * -1521134295 + idContato.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(nomeContato);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Assunto);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Local);
+            hashCode = hashCode * -1521134295 + DataInicio.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(LinkReuniao);
+            hashCode = hashCode * -1521134295 + DataTerminoCompromisso.GetHashCode();
+            return hashCode;
+        }
     }
 }

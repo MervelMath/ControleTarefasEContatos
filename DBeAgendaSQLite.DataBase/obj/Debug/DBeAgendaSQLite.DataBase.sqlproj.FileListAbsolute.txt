@@ -1,0 +1,5 @@
+C:\Users\theem\Downloads\ControleTarefasEContatos\DBeAgendaSQLite.DataBase\bin\Debug\DBeAgendaSQLite.DataBase.dacpac
+C:\Users\theem\Downloads\ControleTarefasEContatos\DBeAgendaSQLite.DataBase\bin\Debug\DBeAgendaSQLite.DataBase.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\DBeAgendaSQLite.DataBase\bin\Debug\DBeAgendaSQLite.DataBase.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\DBeAgendaSQLite.DataBase\obj\Debug\DBeAgendaSQLite.DataBase.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\DBeAgendaSQLite.DataBase\obj\Debug\DBeAgendaSQLite.DataBase.pdb

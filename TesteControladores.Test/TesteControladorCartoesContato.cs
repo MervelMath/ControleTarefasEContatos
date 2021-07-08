@@ -1,5 +1,7 @@
 ﻿using Controladores.ClassLibrary;
+using Controladores.ClassLibrary.ContatosModule;
 using Dominios.ClassLibrary;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -11,46 +13,101 @@ namespace TesteControladores.Test
     public class TesteControladorCartoesContato
     {
 
-        ControladorCartoesContatos controladorCartoesContatos = new ControladorCartoesContatos();
+        ControladorCartoesContatos controlador;
+        ResetDB dB;
 
-        [TestMethod]
-        public void TesteSelecaoTodasAsCartoes()
+        public TesteControladorCartoesContato()
         {
-            Assert.AreNotEqual(controladorCartoesContatos.SelecionarTodosRegistros(), null);
+            controlador = new ControladorCartoesContatos();
+            dB = new ResetDB();
+            dB.DeleteSQLI(@"DELETE FROM [TBCARTOES];");
+            dB.DeleteSQLS(@"DELETE FROM [TBCARTOES];");
         }
 
         [TestMethod]
-        public void TesteSelecaoCartoesPorId()
+        public void DeveInserir_Contato()
         {
-            Assert.AreNotEqual(controladorCartoesContatos.SelecionarRegistroPorId(3), null);
+            //arrange
+            CartoesDeContatos contato = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Estagiário");
+
+            //action
+            controlador.Inserir(contato);
+
+            //assert
+            CartoesDeContatos cartaoDeCOntatoEncontrado = controlador.SelecionarRegistroPorId(contato.id);
+            cartaoDeCOntatoEncontrado.Should().Be(contato);
         }
 
         [TestMethod]
-        public void TesteEdicaoCartao()
+        public void DeveEditar_UmContato()
         {
-            CartoesDeContatos cartoes = controladorCartoesContatos.SelecionarRegistroPorId(3);
-            string testeNome = cartoes.nome;
-            cartoes.nome = "Teeeste";
-            controladorCartoesContatos.Editar(cartoes);
-            Assert.AreNotEqual(testeNome, cartoes.nome);
+            //arrange
+            CartoesDeContatos contato = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Estagiário");
+            controlador.Inserir(contato);
+
+            string cargoAux = contato.cargo;
+
+            contato.cargo = "Desenvolvedor";
+
+            //action
+            controlador.Editar(contato);
+
+            //assert
+            CartoesDeContatos contatoEncontrado = controlador.SelecionarRegistroPorId(contato.id);
+            cargoAux.Should().NotBe(contatoEncontrado.cargo);
         }
 
         [TestMethod]
-        public void TesteInsercaoCartao()
+        public void DeveExcluir_UmContato()
         {
-            int tamanhoInicial = controladorCartoesContatos.SelecionarTodosRegistros().Count;
-            CartoesDeContatos cartao = new CartoesDeContatos("Alooooohh", "matheus@gmail.com",
-                31820, "empr", "func");
-            controladorCartoesContatos.Inserir(cartao);
-            Assert.AreNotEqual(tamanhoInicial, controladorCartoesContatos.SelecionarTodosRegistros().Count);
+            //arrange            
+            CartoesDeContatos contato = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Estagiário");
+            controlador.Inserir(contato);
+
+
+            //action            
+            controlador.Excluir(contato.id);
+
+            //assert
+            CartoesDeContatos contatoEncontrado = controlador.SelecionarRegistroPorId(contato.id);
+            contatoEncontrado.Should().BeNull();
         }
 
         [TestMethod]
-        public void TesteRemocaoCartao()
+        public void DeveSelecionar_Tarefa_PorId()
         {
-            controladorCartoesContatos.Excluir(4);
+            //arrange
+            CartoesDeContatos contato = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Estagiário");
+            controlador.Inserir(contato);
 
-            Assert.AreEqual(controladorCartoesContatos.SelecionarRegistroPorId(4), null);
+            //action
+            CartoesDeContatos contatoEncontrado = controlador.SelecionarRegistroPorId(contato.id);
+
+            //assert
+            contatoEncontrado.Should().Be(contato);
+        }
+
+        public void DeveSelecionar_TodosOsContatos_OrdenadosPorCargo()
+        {
+            //arrange
+            CartoesDeContatos contato = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Estagiário");
+            controlador.Inserir(contato);
+
+            CartoesDeContatos contato2 = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Funcionario");
+            controlador.Inserir(contato2);
+
+            CartoesDeContatos contato3 = new CartoesDeContatos("Matheus", "teste@gmail.com", 12345678, "NDD", "Estagiário");
+            controlador.Inserir(contato3);
+
+
+            //action
+            var contatos = controlador.SelecionarTodosRegistros();
+
+            //assert
+            contatos.Should().HaveCount(3);
+            contatos[0].cargo.Should().Be("Estagiério");
+            contatos[1].cargo.Should().Be("Estagiério");
+            contatos[2].cargo.Should().Be("Funcionario");
         }
     }
 }

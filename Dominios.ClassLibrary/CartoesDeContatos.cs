@@ -27,6 +27,7 @@ namespace Dominios.ClassLibrary
             this.cargo = cargo;
         }
 
+
         public override string Validar()
         {
             if (email.Substring(email.Length - 4) != ".com")
@@ -39,6 +40,29 @@ namespace Dominios.ClassLibrary
                 return ("O número de telefone é muito pequeno.");
 
             return "VALIDA";
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is CartoesDeContatos contatos &&
+                   id == contatos.id &&
+                   nome == contatos.nome &&
+                   email == contatos.email &&
+                   telefone == contatos.telefone &&
+                   empresa == contatos.empresa &&
+                   cargo == contatos.cargo;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -360649799;
+            hashCode = hashCode * -1521134295 + id.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(nome);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(email);
+            hashCode = hashCode * -1521134295 + telefone.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(empresa);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(cargo);
+            return hashCode;
         }
     }
 }
