@@ -80,6 +80,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="TBTarefasSQLite.db" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controladores.ClassLibrary\Controladores.Controller.csproj">

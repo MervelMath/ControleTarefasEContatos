@@ -9,6 +9,7 @@ namespace Controladores.ClassLibrary
 {
     public abstract class ControladorBase<T> where T : EntidadeBase
     {
+        //Para usar o SQLServer, mude o "name" da "connection string" para "DBeAgendaSQLI".
         protected static readonly string connectionString = ConfigurationManager.ConnectionStrings["DBeAgendaSQLI"].ConnectionString;
         
         protected SqlConnection conexaoComBanco = new SqlConnection(connectionString);
