@@ -39,7 +39,7 @@ namespace Telas.ClassLibrary
             {
                 if (DataDeInicioEhMaiorQueADataAtual(compromisso))
                     Console.WriteLine(configuracaoColunasTabela, compromisso.id, compromisso.Assunto, compromisso.Local,
-                        compromisso.DataInicio, compromisso.DataTerminoCompromisso, compromisso.LinkReuniao, compromisso.nomeContato);
+                        compromisso.DataInicio, compromisso.DataTermino, compromisso.LinkReuniao, compromisso.nomeContato);
             }
 
             Console.WriteLine("");
@@ -51,7 +51,7 @@ namespace Telas.ClassLibrary
             {
                 if (DataJaPassou(compromisso))
                     Console.WriteLine(configuracaoColunasTabela, compromisso.id, compromisso.Assunto, compromisso.Local,
-                    compromisso.DataInicio, compromisso.DataTerminoCompromisso, compromisso.LinkReuniao, compromisso.nomeContato);
+                    compromisso.DataInicio, compromisso.DataTermino, compromisso.LinkReuniao, compromisso.nomeContato);
             }
 
             return compromissos;

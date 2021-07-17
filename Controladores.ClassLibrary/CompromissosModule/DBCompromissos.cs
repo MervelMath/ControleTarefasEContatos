@@ -127,7 +127,7 @@ namespace Controladores.ClassLibrary.CompromissosModule
             comandoInsercao.Parameters.AddWithValue("ASSUNTO", obj.Assunto);
             comandoInsercao.Parameters.AddWithValue("LOCAL", obj.Local);
             comandoInsercao.Parameters.AddWithValue("DATAINICIO", obj.DataInicio);
-            comandoInsercao.Parameters.AddWithValue("DATAFIM", obj.DataTerminoCompromisso);
+            comandoInsercao.Parameters.AddWithValue("DATAFIM", obj.DataTermino);
             comandoInsercao.Parameters.AddWithValue("LINKREUNIAO", obj.LinkReuniao);
             if (obj.idContato == 0)
                 comandoInsercao.Parameters.AddWithValue("IDCONTATO", DBNull.Value);
@@ -159,7 +159,7 @@ namespace Controladores.ClassLibrary.CompromissosModule
             comandoInsercao.Parameters.AddWithValue("ASSUNTO", obj.Assunto);
             comandoInsercao.Parameters.AddWithValue("LOCAL", obj.Local);
             comandoInsercao.Parameters.AddWithValue("DATAINICIO", obj.DataInicio);
-            comandoInsercao.Parameters.AddWithValue("DATAFIM", obj.DataTerminoCompromisso);
+            comandoInsercao.Parameters.AddWithValue("DATAFIM", obj.DataTermino);
             comandoInsercao.Parameters.AddWithValue("LINKREUNIAO", obj.LinkReuniao);
             if (obj.idContato == 0)
                 comandoInsercao.Parameters.AddWithValue("IDCONTATO", DBNull.Value);
@@ -187,7 +187,7 @@ namespace Controladores.ClassLibrary.CompromissosModule
             comandoEdicao.Parameters.AddWithValue("ASSUNTO", obj.Assunto);
             comandoEdicao.Parameters.AddWithValue("LOCAL", obj.Local);
             comandoEdicao.Parameters.AddWithValue("DATAINICIO", obj.DataInicio);
-            comandoEdicao.Parameters.AddWithValue("DATAFIM", obj.DataTerminoCompromisso);
+            comandoEdicao.Parameters.AddWithValue("DATAFIM", obj.DataTermino);
             comandoEdicao.Parameters.AddWithValue("LINKREUNIAO", obj.LinkReuniao);
             if (obj.idContato == 0)
                 comandoEdicao.Parameters.AddWithValue("IDCONTATO", DBNull.Value);
@@ -215,7 +215,7 @@ namespace Controladores.ClassLibrary.CompromissosModule
             comandoEdicao.Parameters.AddWithValue("ASSUNTO", obj.Assunto);
             comandoEdicao.Parameters.AddWithValue("LOCAL", obj.Local);
             comandoEdicao.Parameters.AddWithValue("DATAINICIO", obj.DataInicio);
-            comandoEdicao.Parameters.AddWithValue("DATAFIM", obj.DataTerminoCompromisso);
+            comandoEdicao.Parameters.AddWithValue("DATAFIM", obj.DataTermino);
             comandoEdicao.Parameters.AddWithValue("LINKREUNIAO", obj.LinkReuniao);
             if (obj.idContato == 0)
                 comandoEdicao.Parameters.AddWithValue("IDCONTATO", DBNull.Value);

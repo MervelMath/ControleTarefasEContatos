@@ -30,9 +30,11 @@ namespace Dominios.ClassLibrary
 
         public override string Validar()
         {
-            if (email.Substring(email.Length - 4) != ".com")
-                return ("O email não contém o finalizador '.com'!");
-
+            if (email.Length >= 4)
+            {
+                if (email.Substring(email.Length - 4) != ".com")
+                    return ("O email não contém o finalizador '.com'!");
+            }
             if(email.Contains("@") == false)
                 return ("O email não contém um domínio com '@'.");
 
@@ -40,6 +42,11 @@ namespace Dominios.ClassLibrary
                 return ("O número de telefone é muito pequeno.");
 
             return "VALIDA";
+        }
+
+        public override string ToString()
+        {
+            return nome;
         }
 
         public override bool Equals(object obj)

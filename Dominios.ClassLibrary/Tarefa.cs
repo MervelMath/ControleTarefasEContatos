@@ -33,7 +33,7 @@ namespace Dominios.ClassLibrary
                     return "A data de conclusão não pode ser menor que a atual.";
 
                 else if (prioridade > 2 || prioridade < 0)
-                    return "Prioridade inválida";
+                    return "Prioridade inválida!";
 
                 return "VALIDA";
             }
@@ -61,6 +61,10 @@ namespace Dominios.ClassLibrary
             return hashCode;
         }
 
+        public override string ToString()
+        {
+            return titulo;
         }
+    }
     }
 

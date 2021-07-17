@@ -31,13 +31,15 @@ namespace Dominios.ClassLibrary
         public string Local { get => local;}
         public DateTime DataInicio { get => dataInicioCompromisso;}
         public string LinkReuniao { get => linkReuniao; set => linkReuniao = value; }
-        public DateTime DataTerminoCompromisso { get => dataTerminoCompromisso;}
+        public DateTime DataTermino { get => dataTerminoCompromisso;}
 
         public override string Validar()
         {
-            if (linkReuniao.Substring(linkReuniao.Length - 4) != ".com")
-                return ("O link não contém o finalizador '.com'!");
-
+            if (linkReuniao.Length >= 4)
+            {
+                if (linkReuniao.Substring(linkReuniao.Length - 4) != ".com")
+                    return ("O link não contém o finalizador '.com'!");
+            }
             int comparacaoDeDatasHoje = DateTime.Compare(dataInicioCompromisso, DateTime.Now);
 
             if (comparacaoDeDatasHoje < 0)
@@ -49,6 +51,11 @@ namespace Dominios.ClassLibrary
                 return "A data de início do compromisso não pode ser menor que a data de término.";
 
             return "VALIDA";
+        }
+
+        public override string ToString()
+        {
+            return assunto;
         }
 
         public override bool Equals(object obj)
@@ -66,7 +73,7 @@ namespace Dominios.ClassLibrary
                    Local == compromisso.Local &&
                    DataInicio == compromisso.DataInicio &&
                    LinkReuniao == compromisso.LinkReuniao &&
-                   DataTerminoCompromisso == compromisso.DataTerminoCompromisso;
+                   DataTermino == compromisso.DataTermino;
         }
 
         public override int GetHashCode()
@@ -84,7 +91,7 @@ namespace Dominios.ClassLibrary
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Local);
             hashCode = hashCode * -1521134295 + DataInicio.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(LinkReuniao);
-            hashCode = hashCode * -1521134295 + DataTerminoCompromisso.GetHashCode();
+            hashCode = hashCode * -1521134295 + DataTermino.GetHashCode();
             return hashCode;
         }
     }

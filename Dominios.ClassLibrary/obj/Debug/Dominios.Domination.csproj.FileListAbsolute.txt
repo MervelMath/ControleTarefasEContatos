@@ -1,5 +1,6 @@
 C:\Users\theem\Downloads\ControleTarefasEContatos\Dominios.ClassLibrary\bin\Debug\Dominios.ClassLibrary.dll
 C:\Users\theem\Downloads\ControleTarefasEContatos\Dominios.ClassLibrary\bin\Debug\Dominios.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\Dominios.ClassLibrary\obj\Debug\Dominios.Domination.csproj.AssemblyReference.cache
 C:\Users\theem\Downloads\ControleTarefasEContatos\Dominios.ClassLibrary\obj\Debug\Dominios.Domination.csproj.CoreCompileInputs.cache
 C:\Users\theem\Downloads\ControleTarefasEContatos\Dominios.ClassLibrary\obj\Debug\Dominios.ClassLibrary.dll
 C:\Users\theem\Downloads\ControleTarefasEContatos\Dominios.ClassLibrary\obj\Debug\Dominios.ClassLibrary.pdb

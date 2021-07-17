@@ -13,8 +13,8 @@ namespace Controladores.ClassLibrary.ContatosModule
     {
         #region
         string sqlInsercao =
-                @"PRAGMA foreign_keys = ON;
-                    INSERT INTO TBCARTOES
+                @"
+                INSERT INTO TBCARTOES
                 		(
 		                [NOME],
 		                [EMAIL], 
@@ -33,7 +33,7 @@ namespace Controladores.ClassLibrary.ContatosModule
                 		);";
 
         string sqlSelecaoTodos =
-                @"PRAGMA foreign_keys = ON;
+                @"
                 SELECT 
 	            	[ID],
 	            	[NOME],
@@ -41,10 +41,13 @@ namespace Controladores.ClassLibrary.ContatosModule
 	            	[TELEFONE], 
 	            	[EMPRESA], 
 	            	[CARGO]
-	            FROM TBCARTOES";
+	            FROM 
+                    TBCARTOES
+                ORDER BY
+		            [CARGO]";
 
         string sqlEdicao =
-                @"PRAGMA foreign_keys = ON;
+                @"
                     UPDATE TBCARTOES 
 		                SET
 		                	[NOME] = @NOME,
@@ -71,9 +74,9 @@ namespace Controladores.ClassLibrary.ContatosModule
 	               	[CARGO]
 	            FROM 
                     TBCARTOES
-                ORDER BY
-		            [CARGO]";
-
+                WHERE
+                    ID=@ID;
+                ";
         #endregion
 
         public void AtivarChaveEstrangeira(SQLiteConnection conexaoComBancoSQLite)

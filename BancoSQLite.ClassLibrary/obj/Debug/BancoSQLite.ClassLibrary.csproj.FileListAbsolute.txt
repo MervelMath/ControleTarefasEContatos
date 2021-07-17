@@ -1,0 +1,5 @@
+C:\Users\theem\Downloads\ControleTarefasEContatos\BancoSQLite.ClassLibrary\bin\Debug\BancoSQLite.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\BancoSQLite.ClassLibrary\bin\Debug\BancoSQLite.ClassLibrary.pdb
+C:\Users\theem\Downloads\ControleTarefasEContatos\BancoSQLite.ClassLibrary\obj\Debug\BancoSQLite.ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\theem\Downloads\ControleTarefasEContatos\BancoSQLite.ClassLibrary\obj\Debug\BancoSQLite.ClassLibrary.dll
+C:\Users\theem\Downloads\ControleTarefasEContatos\BancoSQLite.ClassLibrary\obj\Debug\BancoSQLite.ClassLibrary.pdb
