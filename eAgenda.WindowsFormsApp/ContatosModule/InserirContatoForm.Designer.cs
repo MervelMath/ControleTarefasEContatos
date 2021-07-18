@@ -70,6 +70,7 @@ namespace eAgenda.WindowsFormsApp.ContatosModule
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserirContatoForm));
             this.addButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -81,6 +82,8 @@ namespace eAgenda.WindowsFormsApp.ContatosModule
             this.label5 = new System.Windows.Forms.Label();
             this.cargoField = new System.Windows.Forms.TextBox();
             this.telefoneField = new System.Windows.Forms.MaskedTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // addButton
@@ -180,11 +183,21 @@ namespace eAgenda.WindowsFormsApp.ContatosModule
             this.telefoneField.Size = new System.Drawing.Size(209, 20);
             this.telefoneField.TabIndex = 3;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(57, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(262, 69);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // InserirContatoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 372);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.telefoneField);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cargoField);
@@ -203,6 +216,7 @@ namespace eAgenda.WindowsFormsApp.ContatosModule
             this.Text = "InserirContatoForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InserirContatoForm_FormClosed);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.InserirContatoForm_MouseClick);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +235,6 @@ namespace eAgenda.WindowsFormsApp.ContatosModule
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox cargoField;
         private System.Windows.Forms.MaskedTextBox telefoneField;
+        private PictureBox pictureBox1;
     }
 }

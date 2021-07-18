@@ -29,8 +29,11 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExcluirCompromissoForm));
             this.excButton = new System.Windows.Forms.Button();
             this.compromissoCBox = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // excButton
@@ -51,11 +54,21 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
             this.compromissoCBox.Size = new System.Drawing.Size(229, 21);
             this.compromissoCBox.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(28, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(287, 69);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // ExcluirCompromissoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 231);
+            this.ClientSize = new System.Drawing.Size(338, 210);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.excButton);
             this.Controls.Add(this.compromissoCBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -65,6 +78,7 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
             this.Text = "ExcluirCompromissoForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExcluirCompromissoForm_FormClosed);
             this.Load += new System.EventHandler(this.ExcluirCompromissoForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -73,5 +87,6 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
 
         private System.Windows.Forms.Button excButton;
         private System.Windows.Forms.ComboBox compromissoCBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

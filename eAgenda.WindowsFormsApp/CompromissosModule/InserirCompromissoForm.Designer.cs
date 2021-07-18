@@ -70,6 +70,7 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserirCompromissoForm));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,6 +84,8 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
             this.contatoCBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -199,11 +202,21 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(71, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(287, 69);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // InserirCompromissoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 382);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.contatoCBox);
@@ -225,6 +238,7 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InserirCompromissoForm_FormClosed);
             this.Load += new System.EventHandler(this.InserirCompromissoForm_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.InserirCompromissoForm_MouseClick);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +259,6 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
         private System.Windows.Forms.ComboBox contatoCBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button addButton;
+        private PictureBox pictureBox1;
     }
 }

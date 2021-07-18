@@ -71,6 +71,7 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarCompromissoForm));
             this.editarButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.contatosCBox = new System.Windows.Forms.ComboBox();
@@ -86,6 +87,8 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
             this.assuntoField = new System.Windows.Forms.TextBox();
             this.compromissoCBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // editarButton
@@ -220,11 +223,21 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
             this.label7.TabIndex = 36;
             this.label7.Text = "Compromisso:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(72, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(287, 69);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
             // EditarCompromissoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 424);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.compromissoCBox);
             this.Controls.Add(this.editarButton);
@@ -247,6 +260,7 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
             this.Text = "EditarCompromissoForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarCompromissoForm_FormClosed);
             this.Load += new System.EventHandler(this.EditarCompromissoForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,5 +283,6 @@ namespace eAgenda.WindowsFormsApp.CompromissosModule
         private System.Windows.Forms.TextBox assuntoField;
         private System.Windows.Forms.ComboBox compromissoCBox;
         private System.Windows.Forms.Label label7;
+        private PictureBox pictureBox1;
     }
 }
