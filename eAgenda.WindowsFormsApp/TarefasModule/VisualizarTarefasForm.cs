@@ -43,7 +43,7 @@ namespace eAgenda.WindowsFormsApp
             {
                 foreach (Tarefa tarefa in tarefas)
                 {
-                    if (tarefa.percentual.Substring(0, 3) == "100")
+                    if (tarefa.percentual == "100" && tarefa.percentual == "100%")
                     {
                         var linha = dataTable1.NewRow();
                         AdicionarColunas(tarefa, ref linha);
